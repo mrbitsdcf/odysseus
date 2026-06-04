@@ -530,7 +530,7 @@ body.sidebar-collapsed.hamburger-right .incognito-indicator {
      This prevents bitmap/pixel fonts from degrading sidebar readability. */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   letter-spacing: -0.01em;
-  font-size: 13px;
+  font-size: 26px;
 }
 
 .sidebar-resize-handle {
