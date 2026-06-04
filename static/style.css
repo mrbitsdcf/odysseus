@@ -525,6 +525,12 @@ body.sidebar-collapsed.hamburger-right .incognito-indicator {
   backdrop-filter: blur(10px);
   border: 1px solid color-mix(in srgb, var(--fg) 11%, transparent);
   position: relative;
+  /* Navigation chrome uses Inter for legibility at small sizes.
+     Theme font (Fira Code, GohuFont, etc.) applies to chat/code content only.
+     This prevents bitmap/pixel fonts from degrading sidebar readability. */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: -0.01em;
+  font-size: 13px;
 }
 
 .sidebar-resize-handle {
@@ -619,7 +625,7 @@ body.sidebar-collapsed.hamburger-right .incognito-indicator {
 .user-bar-name {
   font-size: 10.5px;
   font-weight: 500;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
   color: var(--fg);
   opacity: 0.8;
   overflow: hidden;
@@ -704,6 +710,7 @@ body.sidebar-collapsed.hamburger-right .incognito-indicator {
 .sidebar-brand-title {
   font-size: 1rem;
   font-weight: 600;
+  font-style: normal;
   line-height: 1.35;
   color: var(--brand-color, var(--red));
   white-space: nowrap;
@@ -811,6 +818,8 @@ body.hamburger-right .hamburger-btn {
   /* Allow hover labels (e.g. the rail-new-chat "New" tooltip) to extend
          outside the 48px column. overflow:hidden was clipping them. */
   overflow: visible;
+  /* Match sidebar: navigation chrome uses Inter regardless of theme font. */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .rail-resize-handle {
@@ -1562,12 +1571,12 @@ body.hamburger-right .hamburger-btn {
   padding: 0;
   border: none;
   font-size: 11px;
-  font-weight: 400;
+  font-weight: 500;
   font-family: inherit;
-  /* 1.4 gives Fira Code's tall glyph box breathing room on dark bg
-         (dark-mode compensation: +0.1 line-height, +letter-spacing). */
+  /* Inter at 11px in dark mode reads clearly without extra tracking.
+     Slight negative spacing keeps the sans proportions tight. */
   line-height: 1.4;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
   text-transform: none;
   color: var(--fg);
 }
@@ -2415,7 +2424,7 @@ body.rearrange-mode .folder-drag-handle {
   border: none;
   line-height: 1.4;
   font-size: 13px;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
   background: transparent;
   transition: background 0.08s;
   cursor: pointer;
